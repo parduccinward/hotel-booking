@@ -17,7 +17,7 @@ CREATE TABLE guest(
     guest_id serial PRIMARY KEY,
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
-    gender TEXT NOT NULL
+    gender TEXT NOT NULL,
     phone TEXT NOT NULL,
     email TEXT NOT NULL,
     country TEXT NOT NULL,
