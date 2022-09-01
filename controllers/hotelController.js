@@ -1,8 +1,8 @@
-const pool =require("pg");
+const pool =require("../models/db");
 
 const getHotels = async (req,res) => {
     try {
-        const allHotels = await pool.query("SELECT * FROM hotel");
+        const allHotels = await pool.query("SELECT * FROM hotels");
         res.json(allHotels.rows);
     } catch (err) {
         console.error(err.message);
@@ -12,7 +12,7 @@ const getHotels = async (req,res) => {
 const getHotel = async (req, res) => {
     try {
         const {id} = req.params;
-        const hotel = await pool.query("SELECT * FROM hotel WHERE hotel_id = $1 ",[id]);
+        const hotel = await pool.query("SELECT * FROM hotels WHERE hotel_id = $1 ",[id]);
         res.json(hotel.rows);
     } catch (err) {
         console.error(err.message);
@@ -21,12 +21,12 @@ const getHotel = async (req, res) => {
 
 const createHotel = async (req, res) => {
     try {
-        const {hotel_id,hotel_name, hotel_address, city, room_number, phone, website_url} = req.body;
+        const {hotel_name, hotel_address, city, room_number, phone, website_url} = req.body;
         const newHotel = await pool.query(
-            "INSERT INTO hotel (hotel_id,hotel_name, hotel_address, city, room_number, phone, website_url) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
-             [hotel_id,hotel_name, hotel_address, city, room_number, phone, website_url]
+            "INSERT INTO hotels (hotel_name, hotel_address, city, room_number, phone, website_url) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
+             [hotel_name, hotel_address, city, room_number, phone, website_url]
              );
-        res.json(newhotel.rows);
+        res.json(newHotel.rows);
     } catch (err) {
         console.error(err.message); 
     }
@@ -35,7 +35,7 @@ const createHotel = async (req, res) => {
 const deleteHotel = async (req, res) => {
     try {
         const {id} = req.params;
-        const deleteHotel = await pool.query("DELETE FROM hotel WHERE hotel_id =$1",[id]);
+        const deleteHotel = await pool.query("DELETE FROM hotels WHERE hotel_id =$1",[id]);
         res.json("Hotel was deleted successfully!")
     } catch (err) {
         console.error(err.message);
@@ -45,10 +45,10 @@ const deleteHotel = async (req, res) => {
 const updateHotel = async (req, res) => {
     try {
         const {id} = req.params;
-        const {hotel_id,hotel_name, hotel_address, city, room_number, phone, website_url} = req.body;
+        const {hotel_name, hotel_address, city, room_number, phone, website_url} = req.body;
         const updatehotel = await pool.query(
-            "UPDATE hotel SET hotel_id = $1, hotel_name = $2, hotel_address = $3, city = $4, room_number = $5, phone = $6, website_url = $7 WHERE hotel_id = $8",
-             [hotel_id,hotel_name, hotel_address, city, room_number, phone, website_url]
+            "UPDATE hotels SET hotel_name = $1, hotel_address = $2, city = $3, room_number = $4, phone = $5, website_url = $6 WHERE hotel_id = $7",
+             [hotel_name, hotel_address, city, room_number, phone, website_url]
              );
         res.json("Hotel was updated successfully");
     } catch (err) {
