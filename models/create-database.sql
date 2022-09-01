@@ -50,6 +50,7 @@ CREATE TABLE bills(
 
 CREATE TABLE rooms(
     room_id serial PRIMARY KEY,
+    room_number int NOT NULL,
     occupancy BOOLEAN NOT NULL,
     booking_id INT NOT NULL,
     CONSTRAINT fk_booking FOREIGN KEY(booking_id) REFERENCES bookings(booking_id) ON DELETE CASCADE

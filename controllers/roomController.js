@@ -21,10 +21,10 @@ const getRoom = async (req, res) => {
 
 const createRoom = async (req, res) => {
     try {
-        const {occupancy, booking_id} = req.body;
+        const {room_number, occupancy, booking_id} = req.body;
         const newRoom = await pool.query(
-            "INSERT INTO rooms (occupancy, booking_id) VALUES($1, $2) RETURNING *",
-             [occupancy, booking_id]
+            "INSERT INTO rooms (room_number, occupancy, booking_id) VALUES($1, $2, $3) RETURNING *",
+             [room_number, occupancy, booking_id]
              );
         res.json(newRoom.rows);
     } catch (err) {
@@ -45,10 +45,10 @@ const deleteRoom = async (req, res) => {
 const updateRoom = async (req, res) => {
     try {
         const {id} = req.params;
-        const {occupancy, booking_id} = req.body;
+        const {room_number, occupancy, booking_id} = req.body;
         const updateroom = await pool.query(
-            "UPDATE rooms SET occupancy = $1, booking_id = $2 WHERE room_id = $3",
-             [occupancy, booking_id, id]
+            "UPDATE rooms SET room_number = $1, occupancy = $2, booking_id = $3 WHERE room_id = $4",
+             [room_number, occupancy, booking_id, id]
              );
         res.json("Room was updated successfully");
     } catch (err) {
