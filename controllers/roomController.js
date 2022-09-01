@@ -70,9 +70,25 @@ const updateRoom = async (req, res) => {
 
 const assignRooms = async (req,res) =>{
     try {
-        const {bookingId} = req.params;
+        const {id} = req.params;
         const rooms = req.body;
-        res.json(rooms);
+        const roomsArray = [];
+        rooms.roomsSelected.forEach( room => {
+            roomsArray.push(room.room_number);
+        })
+        const updateOccupancy = await pool.query("UPDATE rooms SET occupancy=true, booking_id=$1 where room_number=ANY($2)",[id, roomsArray]);
+        res.json("Cuartos asignados: "+updateOccupancy.rowCount);
+
+    } catch (err) {
+        console.error(err.message)
+    }
+}
+
+const deallocateRooms = async (req,res) =>{
+    try {
+        const {id} = req.params;
+        const updateOccupancy = await pool.query("UPDATE rooms SET occupancy=false, booking_id=null where booking_id=$1",[id]);
+        res.json("Cuartos desocupados: "+updateOccupancy.rowCount);
 
     } catch (err) {
         console.error(err.message)
@@ -86,5 +102,6 @@ module.exports = {
     deleteRoom,
     updateRoom,
     findAvailableRooms,
-    assignRooms
+    assignRooms,
+    deallocateRooms
 };
