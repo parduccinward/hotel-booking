@@ -23,10 +23,14 @@ const getClientRooms = async (req, res) => {
     try {
         const {id} = req.params;
         const clientRooms = await pool.query("SELECT r.room_number FROM rooms r INNER JOIN bookings b ON b.booking_id = r.booking_id INNER JOIN guests g ON b.guest_id = g.guest_id WHERE g.guest_id=$1;",[id]);
-        let jsonRooms = {
-            "reserved_rooms": clientRooms.rows
+        if(clientRooms.rows === undefined || clientRooms.rows.length === 0){
+            res.json("There is no rooms given that Id");
+        }else{
+            let jsonRooms = {
+                "reserved_rooms": clientRooms.rows
+            }
+            res.json(jsonRooms);
         }
-        res.json(jsonRooms);
     } catch (err) {
         console.error(err.message);
     }
