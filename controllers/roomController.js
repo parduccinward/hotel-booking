@@ -19,6 +19,19 @@ const getRoom = async (req, res) => {
     }
 };
 
+const getClientRooms = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const clientRooms = await pool.query("SELECT r.room_number FROM rooms r INNER JOIN bookings b ON b.booking_id = r.booking_id INNER JOIN guests g ON b.guest_id = g.guest_id WHERE g.guest_id=$1;",[id]);
+        let jsonRooms = {
+            "reserved_rooms": clientRooms.rows
+        }
+        res.json(jsonRooms);
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
 const findAvailableRooms = async (req,res) => {
     try {
         const availableRooms = await pool.query("SELECT * FROM rooms where occupancy=false");
@@ -98,6 +111,7 @@ const deallocateRooms = async (req,res) =>{
 module.exports = {
     getRooms,
     getRoom,
+    getClientRooms,
     createRoom,
     deleteRoom,
     updateRoom,
