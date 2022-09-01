@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.get("/",getBills);
 router.get("/:id",getBill);
-router.post("/",createBill);
+router.post("/:id",createBill);
 router.delete("/:id",deleteBill);
 router.put("/:id",updateBill);
 
