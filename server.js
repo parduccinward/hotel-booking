@@ -2,6 +2,7 @@ const express = require("express");
 const hotelRoutes = require("./routes/hotels");
 const guestRoutes = require("./routes/guests");
 const bookingRoutes = require("./routes/bookings");
+const billRoutes = require("./routes/bills");
 
 
 
@@ -17,6 +18,8 @@ app.use((req,res,next)=> {
 app.use("/api/hotels",hotelRoutes);
 app.use("/api/guests",guestRoutes);
 app.use("/api/bookings",bookingRoutes);
+app.use("/api/bills",billRoutes);
+
 
 
 app.listen(4000, () => {
