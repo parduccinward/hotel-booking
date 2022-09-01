@@ -48,7 +48,7 @@ const updateHotel = async (req, res) => {
         const {hotel_name, hotel_address, city, room_number, phone, website_url} = req.body;
         const updatehotel = await pool.query(
             "UPDATE hotels SET hotel_name = $1, hotel_address = $2, city = $3, room_number = $4, phone = $5, website_url = $6 WHERE hotel_id = $7",
-             [hotel_name, hotel_address, city, room_number, phone, website_url]
+             [hotel_name, hotel_address, city, room_number, phone, website_url, id]
              );
         res.json("Hotel was updated successfully");
     } catch (err) {

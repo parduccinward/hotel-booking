@@ -48,7 +48,7 @@ const updateGuest = async (req, res) => {
         const {first_name, last_name, gender, phone, email, country, city} = req.body;
         const updateguest = await pool.query(
             "UPDATE guests SET first_name = $1, last_name = $2, gender = $3, phone = $4, email = $5, country = $6, city = $7 WHERE guest_id = $8",
-             [first_name, last_name, gender, phone, email, country, city]
+             [first_name, last_name, gender, phone, email, country, city, id]
              );
         res.json("Guest was updated successfully");
     } catch (err) {
