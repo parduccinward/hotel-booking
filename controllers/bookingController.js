@@ -26,6 +26,11 @@ const createBooking = async (req, res) => {
             "INSERT INTO bookings (booking_date, arrival_date, departure_date, num_persons, booking_state,  hotel_id, guest_id) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
              [booking_date, arrival_date, departure_date, num_persons, booking_state,  hotel_id, guest_id]
              );
+        const numberOfRoomsNeeded = Math.round(num_persons/2);
+        let newJsonData = {
+            "rooms_needed": numberOfRoomsNeeded
+        }
+        newBooking.rows.push(newJsonData);
         res.json(newBooking.rows);
     } catch (err) {
         console.error(err.message); 
