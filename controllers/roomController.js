@@ -19,6 +19,18 @@ const getRoom = async (req, res) => {
     }
 };
 
+const findAvailableRooms = async (req,res) => {
+    try {
+        const availableRooms = await pool.query("SELECT * FROM rooms where occupancy=false");
+        let jsonRooms = {
+            "rooms_available": availableRooms.rows
+        }
+        res.json(jsonRooms);
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
 const createRoom = async (req, res) => {
     try {
         const {room_number, occupancy, booking_id} = req.body;
@@ -56,10 +68,23 @@ const updateRoom = async (req, res) => {
     }
 };
 
+const assignRooms = async (req,res) =>{
+    try {
+        const {bookingId} = req.params;
+        const rooms = req.body;
+        res.json(rooms);
+
+    } catch (err) {
+        console.error(err.message)
+    }
+}
+
 module.exports = {
     getRooms,
     getRoom,
     createRoom,
     deleteRoom,
-    updateRoom
+    updateRoom,
+    findAvailableRooms,
+    assignRooms
 };
