@@ -1,0 +1,742 @@
+{
+	"info": {
+		"_postman_id": "f8713ed6-449e-4c10-b278-69ff4728f2de",
+		"name": "hotel-booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7582500"
+	},
+	"item": [
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "localhost:4000/api/bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/bookings",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/bookings/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/bookings/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"bookings",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/bookings/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvZW5hcyIsImlhdCI6MTY1ODI2NjgzMiwiZXhwIjoxNjU4MjY3NzMyfQ.HOyty18LKIX2S0xs3tos-wWSyQ5wpK-cKSlniK2L84Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"booking_date\": \"2021-06-08\",\n    \"arrival_date\": \"2022-07-28\",\n    \"departure_date\":\"2022-07-28\",\n    \"num_persons\":\"11\",\n    \"booking_state\":\"Pending\",\n    \"hotel_id\":\"1\",\n    \"guest_id\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/bookings/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"bookings",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/bookings/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/bookings/5",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"bookings",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/bookings/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"booking_date\": \"2021-06-08\",\n    \"arrival_date\": \"2022-07-24\",\n    \"departure_date\":\"2022-07-28\",\n    \"num_persons\":\"11\",\n    \"booking_state\":\"Pending\",\n    \"hotel_id\":\"1\",\n    \"guest_id\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/bookings/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"bookings",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Guests",
+			"item": [
+				{
+					"name": "localhost:4000/api/guests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/guests",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"guests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/guests/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/guests/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"guests",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/guests/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvZW5hcyIsImlhdCI6MTY1ODI2NjgzMiwiZXhwIjoxNjU4MjY3NzMyfQ.HOyty18LKIX2S0xs3tos-wWSyQ5wpK-cKSlniK2L84Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Ignacio\",\n    \"last_name\": \"Contreras\",\n    \"gender\": \"Masculino\",\n    \"phone\":\"71591234\",\n    \"email\":\"ncontreras@gmail.com\",\n    \"country\":\"Boliva\",\n    \"city\":\"La Paz\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/guests/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"guests",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/guests/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/guests/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"guests",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/guests/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Ignacio\",\n    \"last_name\": \"Contreras\",\n    \"gender\": \"Masculino\",\n    \"phone\":\"71591234\",\n    \"email\":\"ncontreras@gmail.com\",\n    \"country\":\"Boliva\",\n    \"city\":\"Pando\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/guests/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"guests",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotels",
+			"item": [
+				{
+					"name": "localhost:4000/api/hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/hotels",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/hotels/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/hotels/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"hotels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/hotels/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvZW5hcyIsImlhdCI6MTY1ODI2NjgzMiwiZXhwIjoxNjU4MjY3NzMyfQ.HOyty18LKIX2S0xs3tos-wWSyQ5wpK-cKSlniK2L84Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hotel_name\": \"Sheraton\",\n    \"hotel_address\": \"Av. Arce\",\n    \"city\": \"La Paz\",\n    \"room_number\":\"80\",\n    \"phone\":\"23782722\",\n    \"website_url\":\"shorturl.at/bnV79\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/hotels/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"hotels",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/hotels/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/hotels/3",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"hotels",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/hotels/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hotel_name\": \"Real Plaza\",\n    \"hotel_address\": \"Av. Arce\",\n    \"city\": \"La Paz\",\n    \"room_number\":\"80\",\n    \"phone\":\"23782722\",\n    \"website_url\":\"shorturl.at/bnV79\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/hotels/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"hotels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bills",
+			"item": [
+				{
+					"name": "localhost:4000/api/bills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/bills",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"bills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/bills/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/bills/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"bills",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/bills/1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvZW5hcyIsImlhdCI6MTY1ODI2NjgzMiwiZXhwIjoxNjU4MjY3NzMyfQ.HOyty18LKIX2S0xs3tos-wWSyQ5wpK-cKSlniK2L84Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment_option\": \"Credit Card\",\n    \"rate\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/bills/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"bills",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/bills/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/bills/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"bills",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/bills/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"total_amount\": \"1200\",\n    \"payment_date\": \"2022-07-28\",\n    \"payment_option\": \"QR\",\n    \"booking_id\":\"2\",\n    \"guest_id\":\"3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/bills/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"bills",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "localhost:4000/api/rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/rooms",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/rooms/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/rooms/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"rooms",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/rooms/find",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/rooms/find",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"rooms",
+								"find"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/rooms/client/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/rooms/client/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"rooms",
+								"client",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/rooms/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvZW5hcyIsImlhdCI6MTY1ODI2NjgzMiwiZXhwIjoxNjU4MjY3NzMyfQ.HOyty18LKIX2S0xs3tos-wWSyQ5wpK-cKSlniK2L84Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"room_number\":\"1013\",\n    \"occupancy\": \"true\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/rooms/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"rooms",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/rooms/1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/rooms/14",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"rooms",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/rooms/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"room_number\":\"1012\",\n    \"occupancy\": \"false\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/rooms/13",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"rooms",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/rooms/assign/1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roomsSelected\": [\n        {\n            \"room_number\":\"1000\",\n            \"occupancy\": \"false\"\n        },\n        {\n            \"room_number\":\"1001\",\n            \"occupancy\": \"false\"\n        },\n        {\n            \"room_number\":\"1002\",\n            \"occupancy\": \"false\"\n        },\n        {\n            \"room_number\":\"1003\",\n            \"occupancy\": \"false\"\n        },\n        {\n            \"room_number\":\"1004\",\n            \"occupancy\": \"false\"\n        },\n        {\n            \"room_number\":\"1005\",\n            \"occupancy\": \"false\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/rooms/assign/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"rooms",
+								"assign",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/rooms/deallocate/2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/rooms/deallocate/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"rooms",
+								"deallocate",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
