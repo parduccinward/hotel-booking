@@ -5,9 +5,6 @@ const bookingRoutes = require("./routes/bookings");
 const billRoutes = require("./routes/bills");
 const roomRoutes = require("./routes/rooms");
 
-
-
-
 const app = express();
 
 app.use(express.json());
